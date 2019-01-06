@@ -102,7 +102,7 @@
 			<div id="juti2">200ml</div>
 			<span class="num">数量</span>
 			<button id="jian" onclick="jiann()">-</button>
-			<span id="number">1</span>
+			<input id="number" value="1">1</input>
 			<button id="jia" onclick="jiaa()">+</button>
 			<span class="jians">件  （库存5件）</span>
 			<span class="xiaoliang">销量</span>
@@ -229,16 +229,18 @@
 		var zhong = document.getElementById("zhong");
 		function jiann(){
 			var number = document.getElementById("number");
-			number.innerHTML--;
-			if(number.innerHTML<0){
-				number.innerHTML = 0;
+			number.value--;
+			if(number.value<0){
+				number.value = 0;
+				jian.style.cursor = "not-allowed";
 			}
 		}
 		function jiaa(){
 			var number = document.getElementById("number");
-			number.innerHTML++;
-			if(number.innerHTML>5){
-				number.innerHTML = 5;
+			number.value++;
+			if(number.value>5){
+				number.value = 5;
+				jia.style.cursor = "not-allowed";
 			}
 		}
 		span2.onmouseover = function(){
